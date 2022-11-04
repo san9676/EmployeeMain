@@ -1,0 +1,446 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "EmpDetails",
+    "description" : "OrgDetails service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/emp_personal" : {
+      "post" : {
+        "summary" : "postEmpDetails",
+        "description" : "postEmpDetails",
+        "operationId" : "post-emp_personal",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/EmpPersonalReq"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a EmpPersonalRes to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/EmpPersonalRes"
+            }
+          }
+        }
+      }
+    },
+    "/addEmpAddress" : {
+      "post" : {
+        "summary" : "postEmpDetails",
+        "description" : "postEmpDetails",
+        "operationId" : "post-addEmpAddress",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Employee_AddressReq"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Employee_AddressRes to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Employee_AddressRes"
+            }
+          }
+        }
+      }
+    },
+    "/addOrgDetails" : {
+      "post" : {
+        "summary" : "postOrgDetails",
+        "description" : "postOrgDetails",
+        "operationId" : "post-addOrgDetails",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Emp_OrgDetailsReq"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Emp_OrgDetailsRes to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Emp_OrgDetailsRes"
+            }
+          }
+        }
+      }
+    },
+    "/addInsurenceData" : {
+      "post" : {
+        "summary" : "postEmpDetails",
+        "description" : "postEmpDetails",
+        "operationId" : "post-addInsurenceData",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Emp_InsurenceReq"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Emp_InsurenceRes to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Emp_InsurenceRes"
+            }
+          }
+        }
+      }
+    },
+    "/AddSalTitle" : {
+      "post" : {
+        "summary" : "postEmpDetails",
+        "description" : "postEmpDetails",
+        "operationId" : "post-AddSalTitle",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Emp_SalTitleReq"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Emp_SalTitleRes to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Emp_SalTitleRes"
+            }
+          }
+        }
+      }
+    },
+    "/AddMainData" : {
+      "post" : {
+        "summary" : "postEmpDetails",
+        "description" : "postEmpDetails",
+        "operationId" : "post-AddMainData",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "type" : "string"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/empProfesional" : {
+      "post" : {
+        "summary" : "postEmpDetails",
+        "description" : "postEmpDetails",
+        "operationId" : "post-empProfesional",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Employee_ProfReq"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Employee_ProfRes to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Employee_ProfRes"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Emp_OrgDetailsRes" : {
+      "type" : "object",
+      "properties" : {
+        "ResCode" : {
+          "type" : "string"
+        },
+        "ResMsg" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Emp_SalTitleRes" : {
+      "type" : "object",
+      "properties" : {
+        "ResCode" : {
+          "type" : "string"
+        },
+        "ResMsg" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Emp_OrgDetailsReq" : {
+      "type" : "object",
+      "required" : [ "OrganizationName", "CompanyHQ", "CompanyPhNo", "EmpCode", "EmpName" ],
+      "properties" : {
+        "EmpCode" : {
+          "type" : "string"
+        },
+        "EmpName" : {
+          "type" : "string"
+        },
+        "OrganizationName" : {
+          "type" : "string"
+        },
+        "CompanyHQ" : {
+          "type" : "string"
+        },
+        "CompanyPhNo" : {
+          "type" : "string"
+        },
+        "OrgAddress" : {
+          "type" : "string"
+        },
+        "DirectorName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Emp_SalTitleReq" : {
+      "type" : "object",
+      "required" : [ "Title", "CurrentSal", "EmpCode", "EmpName" ],
+      "properties" : {
+        "EmpCode" : {
+          "type" : "string"
+        },
+        "EmpName" : {
+          "type" : "string"
+        },
+        "Title" : {
+          "type" : "string"
+        },
+        "CurrentSal" : {
+          "type" : "string"
+        },
+        "lastModifiedDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        }
+      }
+    },
+    "EmpPersonalRes" : {
+      "type" : "object",
+      "properties" : {
+        "ResCode" : {
+          "type" : "string"
+        },
+        "ResMsg" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Emp_InsurenceReq" : {
+      "type" : "object",
+      "required" : [ "PolicyType", "SumInsured", "PolicyNumber", "ValidTill", "OrgName", "EmpCode", "EmpName" ],
+      "properties" : {
+        "EmpCode" : {
+          "type" : "string"
+        },
+        "EmpName" : {
+          "type" : "string"
+        },
+        "OrgName" : {
+          "type" : "string"
+        },
+        "PolicyNumber" : {
+          "type" : "string"
+        },
+        "PolicyType" : {
+          "type" : "string"
+        },
+        "SumInsured" : {
+          "type" : "string"
+        },
+        "ValidTill" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Emp_InsurenceRes" : {
+      "type" : "object",
+      "properties" : {
+        "ResCode" : {
+          "type" : "string"
+        },
+        "ResMsg" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Employee_AddressReq" : {
+      "type" : "object",
+      "required" : [ "AddressLine1", "State", "ZipCode", "City", "EmpCode" ],
+      "properties" : {
+        "EmpCode" : {
+          "type" : "string"
+        },
+        "AddressLine1" : {
+          "type" : "string"
+        },
+        "AddressLine2" : {
+          "type" : "string"
+        },
+        "Landmark" : {
+          "type" : "string"
+        },
+        "City" : {
+          "type" : "string"
+        },
+        "State" : {
+          "type" : "string"
+        },
+        "ZipCode" : {
+          "type" : "string"
+        }
+      }
+    },
+    "EmpPersonalReq" : {
+      "type" : "object",
+      "required" : [ "EmailID", "EmpCode", "EmpName" ],
+      "properties" : {
+        "EmpCode" : {
+          "type" : "string"
+        },
+        "EmpName" : {
+          "type" : "string"
+        },
+        "EmailID" : {
+          "type" : "string"
+        },
+        "Alt_EmailID" : {
+          "type" : "string"
+        },
+        "PhoneNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "DOB" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "MaritalStatus" : {
+          "type" : "string"
+        },
+        "Age" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "AadhaarNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "PAN_Number" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Employee_ProfRes" : {
+      "type" : "object",
+      "required" : [ "ResCode", "ResMsg" ],
+      "properties" : {
+        "ResCode" : {
+          "type" : "string"
+        },
+        "ResMsg" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Employee_ProfReq" : {
+      "type" : "object",
+      "required" : [ "EmpCode" ],
+      "properties" : {
+        "EmpCode" : {
+          "type" : "string"
+        },
+        "Department" : {
+          "type" : "string"
+        },
+        "Reporting-To" : {
+          "type" : "string"
+        },
+        "Seating-Location" : {
+          "type" : "string"
+        },
+        "Location" : {
+          "type" : "string"
+        },
+        "Title" : {
+          "type" : "string"
+        },
+        "Date-of-joining" : {
+          "type" : "string"
+        },
+        "Employee-status" : {
+          "type" : "string"
+        },
+        "Employee-type" : {
+          "type" : "string"
+        },
+        "Role" : {
+          "type" : "string"
+        },
+        "Experience" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Employee_AddressRes" : {
+      "type" : "object",
+      "properties" : {
+        "ResCode" : {
+          "type" : "string"
+        },
+        "ResMsg" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

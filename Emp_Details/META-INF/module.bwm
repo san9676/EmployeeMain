@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_d5RJ0FjnEe28ef0bHrU9Ng" targetNamespace="http://tns.tibco.com/bw/composite/Emp_Details" name="Emp_Details" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_8W4wkljsEe28ef0bHrU9Ng" name="addsal_title" promote="ComponentSendSalaryRequest/addsal_title">
+    <sca:interface.wsdl xmi:id="_8W5XoFjsEe28ef0bHrU9Ng" interface="http://xmlns.example.com/20221031125133PLT#wsdl.interface(addsal_title)" scaext:wsdlLocation="../Processes/emp_details/SendSalaryRequest.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_8XHaEFjsEe28ef0bHrU9Ng" name="RestService" path="/addsal_title" docBasePath="http://localhost:7777/Emp_Details" docResourcePath="Emp_SalTitle" basePath="/" connector="es_common_framework_sh.MainSysHttpConn" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/emp_details.SendSalaryRequest-Emp_SalTitle.json">
+      <operation xmi:id="_8XP88FjsEe28ef0bHrU9Ng" operationName="post" nickname="post-addsal_title" httpMethod="POST" notes="postEmp_SalTitle" responseStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientFormat>xml</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+        <clientRequestFormat>xml</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_8ZxFcFjsEe28ef0bHrU9Ng"/>
+      <advancedConfig xmi:id="_8XLEcFjsEe28ef0bHrU9Ng" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_8XP88VjsEe28ef0bHrU9Ng" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_rFthsFkCEe2L0tcRQSMsSQ" name="addOrgDetails" promote="ComponentAddOrgDetails/addOrgDetails">
+    <sca:interface.wsdl xmi:id="_rF02cFkCEe2L0tcRQSMsSQ" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(addOrgDetails)"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_rF8yQFkCEe2L0tcRQSMsSQ" name="RestService1" path="/addOrgDetails" docBasePath="http://localhost:7777/Emp_Details" docResourcePath="EmpDetails" basePath="/" connector="es_common_framework_sh.MainSysHttpConn" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/emp_details.AddOrgDetails-OrgDetails.json">
+      <operation xmi:id="_rGlrcFkCEe2L0tcRQSMsSQ" operationName="post" nickname="post-addOrgDetails" httpMethod="POST" notes="postOrgDetails" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientFormat>xml</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+        <clientRequestFormat>xml</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_rHylUFkCEe2L0tcRQSMsSQ"/>
+      <advancedConfig xmi:id="_rF8yQVkCEe2L0tcRQSMsSQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_rGmSgFkCEe2L0tcRQSMsSQ" bindingName="RestService1"/>
+  </sca:service>
+  <sca:service xmi:id="_Qb_PAFncEe27zucy6MXuYQ" name="AddMainData" promote="ComponentAddOrgDetails/AddMainData">
+    <sca:interface.wsdl xmi:id="_QcFVoFncEe27zucy6MXuYQ" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(AddMainData)" scaext:wsdlLocation="../Processes/emp_details/EmpDetails.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_QcQ70FncEe27zucy6MXuYQ" name="RestService2" path="/AddMainData" docBasePath="http://localhost:7777/Emp_Details" docResourcePath="EmpDetails" basePath="/" connector="es_common_framework_sh.MainSysHttpConn" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/emp_details.EmpDetails-EmpDetails.json">
+      <operation xmi:id="_QcUmMFncEe27zucy6MXuYQ" operationName="post" nickname="post-AddMainData" httpMethod="POST" notes="postEmpDetails" responseStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_QdPMMFncEe27zucy6MXuYQ"/>
+      <advancedConfig xmi:id="_QcQ70VncEe27zucy6MXuYQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_QcUmMVncEe27zucy6MXuYQ" bindingName="RestService2"/>
+  </sca:service>
+  <sca:service xmi:id="_J3EUAlndEe27zucy6MXuYQ" name="addInsurenceData" promote="ComponentAddOrgDetails/addInsurenceData">
+    <sca:interface.wsdl xmi:id="_J3EUBlndEe27zucy6MXuYQ" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(addInsurenceData)" scaext:wsdlLocation="../Processes/emp_details/EmpDetails.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_J3OsEFndEe27zucy6MXuYQ" name="RestService3" path="/addInsurenceData" docBasePath="http://localhost:7777/Emp_Details" docResourcePath="EmpDetails" basePath="/" connector="es_common_framework_sh.MainSysHttpConn" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/emp_details.EmpDetails-EmpDetails.json">
+      <operation xmi:id="_J3RvYFndEe27zucy6MXuYQ" operationName="post" nickname="post-addInsurenceData" httpMethod="POST" notes="postEmpDetails" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_J4P_wFndEe27zucy6MXuYQ"/>
+      <advancedConfig xmi:id="_J3OsEVndEe27zucy6MXuYQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_J3SWcFndEe27zucy6MXuYQ" bindingName="RestService3"/>
+  </sca:service>
+  <sca:service xmi:id="_ZhIuQlnfEe27zucy6MXuYQ" name="emp_personal" promote="ComponentAddOrgDetails/emp_personal">
+    <sca:interface.wsdl xmi:id="_ZhJVUlnfEe27zucy6MXuYQ" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(emp_personal)" scaext:wsdlLocation="../Processes/emp_details/EmpDetails.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_ZhcQQFnfEe27zucy6MXuYQ" name="RestService4" path="/emp_personal" docBasePath="http://localhost:7777/Emp_Details" docResourcePath="EmpDetails" basePath="/" connector="es_common_framework_sh.MainSysHttpConn" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/emp_details.EmpDetails-EmpDetails.json">
+      <operation xmi:id="_ZhghsFnfEe27zucy6MXuYQ" operationName="post" nickname="post-emp_personal" httpMethod="POST" notes="postEmpDetails" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_Zh7_gFnfEe27zucy6MXuYQ"/>
+      <advancedConfig xmi:id="_ZhcQQVnfEe27zucy6MXuYQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_ZhghsVnfEe27zucy6MXuYQ" bindingName="RestService4"/>
+  </sca:service>
+  <sca:service xmi:id="_v9158lnhEe27zucy6MXuYQ" name="empProfesional" promote="ComponentAddOrgDetails/empProfesional">
+    <sca:interface.wsdl xmi:id="_v9159lnhEe27zucy6MXuYQ" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(empProfesional)" scaext:wsdlLocation="../Processes/emp_details/EmpDetails.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_v-ZTkFnhEe27zucy6MXuYQ" name="RestService5" path="/empProfesional" docBasePath="http://localhost:7777/Emp_Details" docResourcePath="EmpDetails" basePath="/" connector="es_common_framework_sh.MainSysHttpConn" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/emp_details.EmpDetails-EmpDetails.json">
+      <operation xmi:id="_v-idgFnhEe27zucy6MXuYQ" operationName="post" nickname="post-empProfesional" httpMethod="POST" notes="postEmpDetails" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_v_pQwFnhEe27zucy6MXuYQ"/>
+      <advancedConfig xmi:id="_v-ZTkVnhEe27zucy6MXuYQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_v-idgVnhEe27zucy6MXuYQ" bindingName="RestService5"/>
+  </sca:service>
+  <sca:service xmi:id="_cZI7EFpsEe23qqGylU5VXA" name="addEmpAddress" promote="ComponentAddOrgDetails/addEmpAddress">
+    <sca:interface.wsdl xmi:id="_cZT6MFpsEe23qqGylU5VXA" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(addEmpAddress)"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_cakecFpsEe23qqGylU5VXA" name="RestService6" path="/addEmpAddress" docBasePath="http://localhost:7777/Emp_Details" docResourcePath="EmpDetails" basePath="/" connector="es_common_framework_sh.MainSysHttpConn" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/emp_details.EmpDetails-EmpDetails.json">
+      <operation xmi:id="_cb9lkFpsEe23qqGylU5VXA" operationName="post" nickname="post-addEmpAddress" httpMethod="POST" notes="postEmpDetails" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_cc-SMFpsEe23qqGylU5VXA"/>
+      <advancedConfig xmi:id="_cakecVpsEe23qqGylU5VXA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_cb-zsFpsEe23qqGylU5VXA" bindingName="RestService6"/>
+  </sca:service>
+  <sca:service xmi:id="_qrgGElpvEe23qqGylU5VXA" name="AddSalTitle" promote="ComponentAddOrgDetails/AddSalTitle">
+    <sca:interface.wsdl xmi:id="_qrhUMFpvEe23qqGylU5VXA" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(AddSalTitle)" scaext:wsdlLocation="../Processes/emp_details/EmpDetails.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_qt1oYFpvEe23qqGylU5VXA" name="RestService7" path="/AddSalTitle" docBasePath="http://localhost:7777/Emp_Details" docResourcePath="EmpDetails" basePath="/" connector="es_common_framework_sh.MainSysHttpConn" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/emp_details.EmpDetails-EmpDetails.json">
+      <operation xmi:id="_qvWrUFpvEe23qqGylU5VXA" operationName="post" nickname="post-AddSalTitle" httpMethod="POST" notes="postEmpDetails" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_qwYmEFpvEe23qqGylU5VXA"/>
+      <advancedConfig xmi:id="_qt1oYVpvEe23qqGylU5VXA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_qvWrUVpvEe23qqGylU5VXA" bindingName="RestService7"/>
+  </sca:service>
+  <sca:property xmi:id="_eHRJkFjnEe28ef0bHrU9Ng" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_eHWCEFjnEe28ef0bHrU9Ng" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_eHZFYFjnEe28ef0bHrU9Ng" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_eJ9RMFjnEe28ef0bHrU9Ng" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ePM9kFjnEe28ef0bHrU9Ng" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_eR6TUFjnEe28ef0bHrU9Ng" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_eSEEUFjnEe28ef0bHrU9Ng" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_eSLZEFjnEe28ef0bHrU9Ng" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_eSPDcFjnEe28ef0bHrU9Ng" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_jQGYsFj0Ee28ef0bHrU9Ng" name="/SalHttpClient/host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_mMTEEFj0Ee28ef0bHrU9Ng" name="/SalHttpClient/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_9Aba0FkCEe2L0tcRQSMsSQ" name="/OrgHttpClient/Host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="__PsHsFkCEe2L0tcRQSMsSQ" name="/OrgHttpClient/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_pgzbYFjsEe28ef0bHrU9Ng" name="ComponentSendSalaryRequest" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_pgzbYVjsEe28ef0bHrU9Ng" processName="emp_details.SendSalaryRequest"/>
+    <sca:service xmi:id="_8W4wkFjsEe28ef0bHrU9Ng" name="addsal_title">
+      <sca:interface.wsdl xmi:id="_8W4wkVjsEe28ef0bHrU9Ng" interface="http://xmlns.example.com/20221031125133PLT#wsdl.interface(addsal_title)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_e7EJwFkCEe2L0tcRQSMsSQ" name="ComponentAddOrgDetails" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_e7EJwVkCEe2L0tcRQSMsSQ" processName="emp_details.EmpDetails"/>
+    <sca:service xmi:id="_rFopMFkCEe2L0tcRQSMsSQ" name="addOrgDetails">
+      <sca:interface.wsdl xmi:id="_rFp3UFkCEe2L0tcRQSMsSQ" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(addOrgDetails)"/>
+    </sca:service>
+    <sca:service xmi:id="_Qb5vcFncEe27zucy6MXuYQ" name="AddMainData">
+      <sca:interface.wsdl xmi:id="_Qb69kFncEe27zucy6MXuYQ" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(AddMainData)"/>
+    </sca:service>
+    <sca:service xmi:id="_J3EUAFndEe27zucy6MXuYQ" name="addInsurenceData">
+      <sca:interface.wsdl xmi:id="_J3EUAVndEe27zucy6MXuYQ" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(addInsurenceData)"/>
+    </sca:service>
+    <sca:service xmi:id="_ZhIuQFnfEe27zucy6MXuYQ" name="emp_personal">
+      <sca:interface.wsdl xmi:id="_ZhIuQVnfEe27zucy6MXuYQ" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(emp_personal)"/>
+    </sca:service>
+    <sca:service xmi:id="_v9158FnhEe27zucy6MXuYQ" name="empProfesional">
+      <sca:interface.wsdl xmi:id="_v9158VnhEe27zucy6MXuYQ" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(empProfesional)"/>
+    </sca:service>
+    <sca:service xmi:id="_cZC0cFpsEe23qqGylU5VXA" name="addEmpAddress">
+      <sca:interface.wsdl xmi:id="_cZFQsFpsEe23qqGylU5VXA" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(addEmpAddress)"/>
+    </sca:service>
+    <sca:service xmi:id="_qrgGEFpvEe23qqGylU5VXA" name="AddSalTitle">
+      <sca:interface.wsdl xmi:id="_qrgGEVpvEe23qqGylU5VXA" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(AddSalTitle)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>
