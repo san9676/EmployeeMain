@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_d5RJ0FjnEe28ef0bHrU9Ng" targetNamespace="http://tns.tibco.com/bw/composite/Emp_Details" name="Emp_Details" compositeext:version="1.0.0" compositeext:formatVersion="2">
-  <sca:service xmi:id="_8W4wkljsEe28ef0bHrU9Ng" name="addsal_title" promote="ComponentSendSalaryRequest/addsal_title">
-    <sca:interface.wsdl xmi:id="_8W5XoFjsEe28ef0bHrU9Ng" interface="http://xmlns.example.com/20221031125133PLT#wsdl.interface(addsal_title)" scaext:wsdlLocation="../Processes/emp_details/SendSalaryRequest.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_8XHaEFjsEe28ef0bHrU9Ng" name="RestService" path="/addsal_title" docBasePath="http://localhost:7777/Emp_Details" docResourcePath="Emp_SalTitle" basePath="/" connector="es_common_framework_sh.MainSysHttpConn" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/emp_details.SendSalaryRequest-Emp_SalTitle.json">
-      <operation xmi:id="_8XP88FjsEe28ef0bHrU9Ng" operationName="post" nickname="post-addsal_title" httpMethod="POST" notes="postEmp_SalTitle" responseStyle="element" outputPartName="item">
-        <clientFormat>json</clientFormat>
-        <clientFormat>xml</clientFormat>
-        <clientRequestFormat>json</clientRequestFormat>
-        <clientRequestFormat>xml</clientRequestFormat>
-      </operation>
-      <parameters xmi:id="_8ZxFcFjsEe28ef0bHrU9Ng"/>
-      <advancedConfig xmi:id="_8XLEcFjsEe28ef0bHrU9Ng" blockingQueueSize="2147483647"/>
-    </scaext:binding>
-    <scact:bindingAdjunct xmi:id="_8XP88VjsEe28ef0bHrU9Ng" bindingName="RestService"/>
-  </sca:service>
   <sca:service xmi:id="_rFthsFkCEe2L0tcRQSMsSQ" name="addOrgDetails" promote="ComponentAddOrgDetails/addOrgDetails">
     <sca:interface.wsdl xmi:id="_rF02cFkCEe2L0tcRQSMsSQ" interface="http://xmlns.example.com/20221031152751PLT#wsdl.interface(addOrgDetails)"/>
     <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_rF8yQFkCEe2L0tcRQSMsSQ" name="RestService1" path="/addOrgDetails" docBasePath="http://localhost:7777/Emp_Details" docResourcePath="EmpDetails" basePath="/" connector="es_common_framework_sh.MainSysHttpConn" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/emp_details.AddOrgDetails-OrgDetails.json">
@@ -113,12 +99,6 @@
   <sca:property xmi:id="_mMTEEFj0Ee28ef0bHrU9Ng" name="/SalHttpClient/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_9Aba0FkCEe2L0tcRQSMsSQ" name="/OrgHttpClient/Host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="__PsHsFkCEe2L0tcRQSMsSQ" name="/OrgHttpClient/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
-  <sca:component xmi:id="_pgzbYFjsEe28ef0bHrU9Ng" name="ComponentSendSalaryRequest" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_pgzbYVjsEe28ef0bHrU9Ng" processName="emp_details.SendSalaryRequest"/>
-    <sca:service xmi:id="_8W4wkFjsEe28ef0bHrU9Ng" name="addsal_title">
-      <sca:interface.wsdl xmi:id="_8W4wkVjsEe28ef0bHrU9Ng" interface="http://xmlns.example.com/20221031125133PLT#wsdl.interface(addsal_title)"/>
-    </sca:service>
-  </sca:component>
   <sca:component xmi:id="_e7EJwFkCEe2L0tcRQSMsSQ" name="ComponentAddOrgDetails" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_e7EJwVkCEe2L0tcRQSMsSQ" processName="emp_details.EmpDetails"/>
     <sca:service xmi:id="_rFopMFkCEe2L0tcRQSMsSQ" name="addOrgDetails">
