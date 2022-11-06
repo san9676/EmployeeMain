@@ -4819,7 +4819,7 @@
                                     httpClientSR="HttpPersonalClient"
                                     httpMethod="POST"
                                     requestContentType="JSON"
-                                    resourcePath="/empPersonal"
+                                    resourcePath="/emp_personal"
                                     responseAcceptType="JSON" xsi:type="restjson:RestInvokeActivity"/>
                                     </properties>
                                     </activityConfig>
