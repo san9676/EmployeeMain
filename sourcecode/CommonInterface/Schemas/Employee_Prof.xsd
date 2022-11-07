@@ -5,7 +5,8 @@
     
     <complexType name="Employee_ProfReqType">
     	<sequence>
-    		<element name="EmpCode" type="string"></element>
+    		<element name="EmpCode" type="string">
+    		</element>
     		<element name="Department" type="string" maxOccurs="1" minOccurs="0"></element>
     		<element name="Reporting-To" type="string" maxOccurs="1" minOccurs="0"></element>
     		<element name="Seating-Location" type="string" maxOccurs="1" minOccurs="0"></element>

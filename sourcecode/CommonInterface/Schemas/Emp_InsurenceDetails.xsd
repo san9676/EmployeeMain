@@ -5,13 +5,14 @@
     
     <complexType name="Emp_InsurenceReqType">
     	<sequence>
-    		<element name="EmpCode" type="string"></element>
+    		<element name="EmpCode" type="string">
+    		</element>
     		<element name="EmpName" type="string"></element>
     		<element name="OrgName" type="string"></element>
     		<element name="PolicyNumber" type="string"></element>
     		<element name="PolicyType" type="string"></element>
-    		<element name="SumInsured" type="string"></element>
-    		<element name="ValidTill" type="string"></element>
+    		<element name="SumInsured" type="int"></element>
+    		<element name="ValidTill" type="date"></element>
     	</sequence>
     </complexType>
     

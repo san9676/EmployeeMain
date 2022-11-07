@@ -5,10 +5,11 @@
     
     <complexType name="Emp_SalTitleReqType">
     	<sequence>
-    		<element name="EmpCode" type="string"></element>
+    		<element name="EmpCode" type="string">
+    		</element>
     		<element name="EmpName" type="string"></element>
     		<element name="Title" type="string"></element>
-    		<element name="CurrentSal" type="string"></element>
+    		<element name="CurrentSal" type="int"></element>
     		<element name="lastModifiedDate" type="dateTime" maxOccurs="1" minOccurs="0"></element>
     	</sequence>
     </complexType>

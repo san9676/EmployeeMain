@@ -7,11 +7,13 @@
     
     <xsd:complexType name="Emp_OrgDetailsReqType">
     	<xsd:sequence>
-    		<xsd:element name="EmpCode" type="xsd:string"></xsd:element>
+    		<xsd:element name="EmpCode" type="xsd:string">
+    		</xsd:element>
     		<xsd:element name="EmpName" type="xsd:string"></xsd:element>
     		<xsd:element name="OrganizationName" type="xsd:string"></xsd:element>
     		<xsd:element name="CompanyHQ" type="xsd:string"></xsd:element>
-    		<xsd:element name="CompanyPhNo" type="xsd:string"></xsd:element>
+    		<xsd:element name="CompanyPhNo" type="xsd:string">
+    		</xsd:element>
     		<xsd:element name="OrgAddress" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
     		<xsd:element name="DirectorName" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
     	</xsd:sequence>

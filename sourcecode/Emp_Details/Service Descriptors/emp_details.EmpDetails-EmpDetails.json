@@ -256,7 +256,8 @@
           "type" : "string"
         },
         "CurrentSal" : {
-          "type" : "string"
+          "type" : "integer",
+          "format" : "int32"
         },
         "lastModifiedDate" : {
           "type" : "string",
@@ -295,10 +296,12 @@
           "type" : "string"
         },
         "SumInsured" : {
-          "type" : "string"
+          "type" : "integer",
+          "format" : "int32"
         },
         "ValidTill" : {
-          "type" : "string"
+          "type" : "string",
+          "format" : "date"
         }
       }
     },
@@ -357,8 +360,7 @@
           "type" : "string"
         },
         "PhoneNo" : {
-          "type" : "integer",
-          "format" : "int64"
+          "type" : "string"
         },
         "DOB" : {
           "type" : "string",

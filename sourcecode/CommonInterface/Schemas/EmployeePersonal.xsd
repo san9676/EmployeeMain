@@ -9,8 +9,7 @@
     		<element name="EmpName" type="string"></element>
     		<element name="EmailID" type="string"></element>
     		<element name="Alt_EmailID" type="string" maxOccurs="1" minOccurs="0"></element>
-    		<element name="PhoneNo" type="long" maxOccurs="1"
-    			minOccurs="0">
+    		<element name="PhoneNo" maxOccurs="1" minOccurs="0" type="string">
     		</element>
     		<element name="DOB" type="date" maxOccurs="1" minOccurs="0"></element>
     		<element name="MaritalStatus" type="string" maxOccurs="1" minOccurs="0"></element>
