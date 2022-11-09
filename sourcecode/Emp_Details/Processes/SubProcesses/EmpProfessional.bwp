@@ -10,6 +10,7 @@
     xmlns:ns2="http://xmlns.example.com/20221108120913PLT"
     xmlns:ns3="http://www.EniqueSol.com/concrete/V1/Emp_Professional/"
     xmlns:ns4="http://tns.tibco.com/bw/palette/internal/activityerror+50582814-5c4b-432f-bb03-64f25e81274c"
+    xmlns:ns5="http://www.EniqueSol.com/Concrete/V2/Emp_Professional/"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -260,13 +261,17 @@
             targetNamespace="http://xmlns.example.com/20221108120913PLT"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
             xmlns:ptyp="http://www.EniqueSol.com/concrete/V1/Emp_Professional/"
+            xmlns:ptyp1="http://www.EniqueSol.com/Concrete/V2/Emp_Professional/"
             xmlns:tns="http://xmlns.example.com/20221108120913PLT"
             xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop"
             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <plnk:partnerLinkType name="partnerLinkType">
                 <plnk:role name="use" portType="ptyp:Emp_Professional"/>
             </plnk:partnerLinkType>
-            <wsdl:import namespace="http://www.EniqueSol.com/concrete/V1/Emp_Professional/"/>
+            <plnk:partnerLinkType name="partnerLinkType1">
+                <plnk:role name="use" portType="ptyp1:Emp_Professional"/>
+            </plnk:partnerLinkType>
+            <wsdl:import namespace="http://www.EniqueSol.com/Concrete/V2/Emp_Professional/"/>
         </wsdl:definitions>
     </tibex:Types>
     <tibex:ProcessInfo callable="true" createdBy="admin"
@@ -569,15 +574,17 @@
             namespace="http://www.EniqueSol.org/Employee_Prof/V1" prefix="tns1"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
+        <tibex:namespaceItem
+            namespace="http://www.EniqueSol.com/concrete/V1/Emp_Professional/" prefix="tns2"/>
     </tibex:NamespaceRegistry>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../../CommonInterface/Schemas/Employee_Prof.xsd" namespace="http://www.EniqueSol.org/Employee_Prof/V1"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.eniquesolution.com/E-Commerce/CommonFramework"/>
     <bpws:import importType="http://schemas.xmlsoap.org/wsdl/"
-        location="../../../CommonInterface/Service%20Descriptors/Emp_Professional_concrete.wsdl" namespace="http://www.EniqueSol.com/concrete/V1/Emp_Professional/"/>
+        location="../../../CommonInterface/Service%20Descriptors/Emp_Professional_concrete.wsdl" namespace="http://www.EniqueSol.com/Concrete/V2/Emp_Professional/"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../CommonInterface/Schemas/Employee_Prof.xsd" namespace="http://www.EniqueSol.org/Employee_Prof/V1"/>
     <bpws:partnerLinks>
         <bpws:partnerLink name="Emp_Professional"
-            partnerLinkType="ns2:partnerLinkType" partnerRole="use"
+            partnerLinkType="ns2:partnerLinkType1" partnerRole="use"
             sca-bpel:ignore="true" sca-bpel:reference="Emp_Professional" sca-bpel:wiredByImpl="false">
             <tibex:ReferenceBinding>
                 <tibex:binding>
@@ -586,13 +593,13 @@
                         xmlns:WebFault="http://www.EniqueSol.org/WebFault"
                         xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2"
                         xmlns:bwbinding="http://tns.tibco.com/bw/model/core/bwbinding"
-                        xmlns:pt="http://www.EniqueSol.com/concrete/V1/Emp_Professional/"
+                        xmlns:pt="http://www.EniqueSol.com/Concrete/V2/Emp_Professional/"
                         xmlns:sca="http://www.osoa.org/xmlns/sca/1.0"
                         xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType"
                         xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                         <referenceBinding name="Emp_Professional" xsi:type="scact:Reference">
                             <sca:interface.wsdl
-                                interface="http://www.EniqueSol.com/concrete/V1/Emp_Professional/#wsdl.interface(Emp_Professional)" scaext:wsdlLocation="../../../CommonInterface/Service%20Descriptors/Emp_Professional_concrete.wsdl"/>
+                                interface="http://www.EniqueSol.com/Concrete/V2/Emp_Professional/#wsdl.interface(Emp_Professional)" scaext:wsdlLocation="../../../CommonInterface/Service%20Descriptors/Emp_Professional_concrete.wsdl"/>
                             <scaext:binding
                                 locationURI="http://localhost:10298/SOAPServiceBinding/emp_Professional/"
                                 modelVersion="1.2.0"
@@ -657,9 +664,9 @@
             name="StartLog-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:LogExceptionHandler"
             name="EndLog-input" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns3:AddEmp_ProfRequest"
+        <bpws:variable messageType="ns5:AddEmp_ProfRequest"
             name="Invoke-input" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns3:AddEmp_ProfResponse"
+        <bpws:variable messageType="ns5:AddEmp_ProfResponse"
             name="Invoke" sca-bpel:internal="true"/>
         <bpws:variable element="ns4:ActivityErrorData"
             name="_error_Invoke" sca-bpel:internal="true"/>
@@ -768,12 +775,12 @@
             <bpws:invoke inputVariable="Invoke-input" name="Invoke"
                 operation="AddEmp_Prof" outputVariable="Invoke"
                 partnerLink="Emp_Professional"
-                portType="ns3:Emp_Professional" tibex:xpdlId="50582814-5c4b-432f-bb03-64f25e81274c">
+                portType="ns5:Emp_Professional" tibex:xpdlId="50582814-5c4b-432f-bb03-64f25e81274c">
                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://www.EniqueSol.org/Employee_Prof/V1" xmlns:tns="http://www.EniqueSol.com/concrete/V1/Emp_Professional/" version="2.0"&gt;&lt;xsl:param name="Start"/&gt;&lt;xsl:template name="Invoke-input" match="/"&gt;&lt;tns:AddEmp_ProfRequest&gt;&lt;parameters&gt;&lt;xsl:for-each select="$Start/tns1:Employee_Prof"&gt;&lt;tns1:Employee_ProfReq&gt;&lt;tns1:EmpCode&gt;&lt;xsl:value-of select="tns1:EmpCode"/&gt;&lt;/tns1:EmpCode&gt;&lt;xsl:if test="tns1:Department"&gt;&lt;tns1:Department&gt;&lt;xsl:value-of select="tns1:Department"/&gt;&lt;/tns1:Department&gt;&lt;/xsl:if&gt;&lt;xsl:if test="tns1:Reporting-To"&gt;&lt;tns1:Reporting-To&gt;&lt;xsl:value-of select="tns1:Reporting-To"/&gt;&lt;/tns1:Reporting-To&gt;&lt;/xsl:if&gt;&lt;xsl:if test="tns1:Seating-Location"&gt;&lt;tns1:Seating-Location&gt;&lt;xsl:value-of select="tns1:Seating-Location"/&gt;&lt;/tns1:Seating-Location&gt;&lt;/xsl:if&gt;&lt;xsl:if test="tns1:Location"&gt;&lt;tns1:Location&gt;&lt;xsl:value-of select="tns1:Location"/&gt;&lt;/tns1:Location&gt;&lt;/xsl:if&gt;&lt;xsl:if test="tns1:Title"&gt;&lt;tns1:Title&gt;&lt;xsl:value-of select="tns1:Title"/&gt;&lt;/tns1:Title&gt;&lt;/xsl:if&gt;&lt;xsl:if test="tns1:Date-of-joining"&gt;&lt;tns1:Date-of-joining&gt;&lt;xsl:value-of select="tns1:Date-of-joining"/&gt;&lt;/tns1:Date-of-joining&gt;&lt;/xsl:if&gt;&lt;xsl:if test="tns1:Employee-status"&gt;&lt;tns1:Employee-status&gt;&lt;xsl:value-of select="tns1:Employee-status"/&gt;&lt;/tns1:Employee-status&gt;&lt;/xsl:if&gt;&lt;xsl:if test="tns1:Employee-type"&gt;&lt;tns1:Employee-type&gt;&lt;xsl:value-of select="tns1:Employee-type"/&gt;&lt;/tns1:Employee-type&gt;&lt;/xsl:if&gt;&lt;xsl:if test="tns1:Role"&gt;&lt;tns1:Role&gt;&lt;xsl:value-of select="tns1:Role"/&gt;&lt;/tns1:Role&gt;&lt;/xsl:if&gt;&lt;xsl:if test="tns1:Experience"&gt;&lt;tns1:Experience&gt;&lt;xsl:value-of select="tns1:Experience"/&gt;&lt;/tns1:Experience&gt;&lt;/xsl:if&gt;&lt;/tns1:Employee_ProfReq&gt;&lt;/xsl:for-each&gt;&lt;/parameters&gt;&lt;/tns:AddEmp_ProfRequest&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://www.EniqueSol.org/Employee_Prof/V1" xmlns:tns2="http://www.EniqueSol.com/concrete/V1/Emp_Professional/" xmlns:tns="http://www.EniqueSol.com/Concrete/V2/Emp_Professional/" version="2.0"&gt;&lt;xsl:param name="Start"/&gt;&lt;xsl:template name="Invoke-input" match="/"&gt;&lt;tns:AddEmp_ProfRequest&gt;&lt;parameters&gt;&lt;xsl:copy-of select="$Start"/&gt;&lt;/parameters&gt;&lt;/tns:AddEmp_ProfRequest&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                 <tibex:inputBindings>
                     <tibex:partBinding
-                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.EniqueSol.org/Employee_Prof/V1&quot; xmlns:tns=&quot;http://www.EniqueSol.com/concrete/V1/Emp_Professional/&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Start&quot;/>&#xa;    &lt;xsl:template name=&quot;Invoke-input&quot; match=&quot;/&quot;>&#xa;        &lt;xsl:for-each select=&quot;$Start/tns1:Employee_Prof&quot;>&#xa;            &lt;tns1:Employee_ProfReq>&#xa;                &lt;tns1:EmpCode>&#xa;                    &lt;xsl:value-of select=&quot;tns1:EmpCode&quot;/>&#xa;                &lt;/tns1:EmpCode>&#xa;                &lt;xsl:if test=&quot;tns1:Department&quot;>&#xa;                    &lt;tns1:Department>&#xa;                        &lt;xsl:value-of select=&quot;tns1:Department&quot;/>&#xa;                    &lt;/tns1:Department>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;tns1:Reporting-To&quot;>&#xa;                    &lt;tns1:Reporting-To>&#xa;                        &lt;xsl:value-of select=&quot;tns1:Reporting-To&quot;/>&#xa;                    &lt;/tns1:Reporting-To>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;tns1:Seating-Location&quot;>&#xa;                    &lt;tns1:Seating-Location>&#xa;                        &lt;xsl:value-of select=&quot;tns1:Seating-Location&quot;/>&#xa;                    &lt;/tns1:Seating-Location>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;tns1:Location&quot;>&#xa;                    &lt;tns1:Location>&#xa;                        &lt;xsl:value-of select=&quot;tns1:Location&quot;/>&#xa;                    &lt;/tns1:Location>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;tns1:Title&quot;>&#xa;                    &lt;tns1:Title>&#xa;                        &lt;xsl:value-of select=&quot;tns1:Title&quot;/>&#xa;                    &lt;/tns1:Title>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;tns1:Date-of-joining&quot;>&#xa;                    &lt;tns1:Date-of-joining>&#xa;                        &lt;xsl:value-of select=&quot;tns1:Date-of-joining&quot;/>&#xa;                    &lt;/tns1:Date-of-joining>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;tns1:Employee-status&quot;>&#xa;                    &lt;tns1:Employee-status>&#xa;                        &lt;xsl:value-of select=&quot;tns1:Employee-status&quot;/>&#xa;                    &lt;/tns1:Employee-status>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;tns1:Employee-type&quot;>&#xa;                    &lt;tns1:Employee-type>&#xa;                        &lt;xsl:value-of select=&quot;tns1:Employee-type&quot;/>&#xa;                    &lt;/tns1:Employee-type>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;tns1:Role&quot;>&#xa;                    &lt;tns1:Role>&#xa;                        &lt;xsl:value-of select=&quot;tns1:Role&quot;/>&#xa;                    &lt;/tns1:Role>&#xa;                &lt;/xsl:if>&#xa;                &lt;xsl:if test=&quot;tns1:Experience&quot;>&#xa;                    &lt;tns1:Experience>&#xa;                        &lt;xsl:value-of select=&quot;tns1:Experience&quot;/>&#xa;                    &lt;/tns1:Experience>&#xa;                &lt;/xsl:if>&#xa;            &lt;/tns1:Employee_ProfReq>&#xa;        &lt;/xsl:for-each>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.EniqueSol.org/Employee_Prof/V1&quot; xmlns:tns2=&quot;http://www.EniqueSol.com/concrete/V1/Emp_Professional/&quot; xmlns:tns=&quot;http://www.EniqueSol.com/Concrete/V2/Emp_Professional/&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Start&quot;/>&#xa;    &lt;xsl:template name=&quot;Invoke-input&quot; match=&quot;/&quot;>&#xa;        &lt;xsl:copy-of select=&quot;$Start&quot;/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                 </tibex:inputBindings>
                 <bpws:targets>
                     <bpws:target linkName="LogHandlerToInvoke"/>
