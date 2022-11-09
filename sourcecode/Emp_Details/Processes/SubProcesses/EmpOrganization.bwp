@@ -938,7 +938,7 @@
             name="StartLog-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:LogExceptionHandler"
             name="EndLog-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:Emp_OrgDetails"
+        <bpws:variable element="ns0:Emp_OrgDetailsReq"
             name="RenderJSON-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:ActivityOutputClass"
             name="RenderJSON" sca-bpel:internal="true"/>
@@ -1076,7 +1076,7 @@
             <bpws:extensionActivity>
                 <tibex:activityExtension
                     inputVariable="RenderJSON-input" name="RenderJSON"
-                    outputVariable="RenderJSON"
+                    outputVariable="RenderJSON" tibex:copyOf="Start"
                     tibex:xpdlId="cc5fec2d-effe-494c-8745-34c07a1c4336" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="LogHandlerToRenderJSON"/>
@@ -1086,7 +1086,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.EniqueSol.org/Emp_OrgDetails/V1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;RenderJSON-input&quot; match=&quot;/&quot;>&lt;tns1:Emp_OrgDetails>&lt;xsl:copy-of select=&quot;$Start/tns1:EmpOrganization/ancestor-or-self::*/namespace::node()&quot;/>&lt;xsl:copy-of select=&quot;$Start/tns1:EmpOrganization/@*&quot;/>&lt;xsl:copy-of select=&quot;$Start/tns1:EmpOrganization/node()&quot;/>&lt;/tns1:Emp_OrgDetails>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.EniqueSol.org/Emp_OrgDetails/V1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;RenderJSON-input&quot; match=&quot;/&quot;>&lt;xsl:copy-of select=&quot;$Start&quot;/>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1099,7 +1099,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/restjson#//JsonRender"/>
                                     <value jsonOutputStyle="None"
                                     schemaType="Xsd" xsi:type="restjson:JsonRender">
-                                    <inputEditorElement href="platform:/resource/CommonInterface/Schemas/Emp_OrgDetails.xsd#//Emp_OrgDetails;XSDElementDeclaration=2"/>
+                                    <inputEditorElement href="platform:/resource/CommonInterface/Schemas/Emp_OrgDetails.xsd#//Emp_OrgDetailsReq;XSDElementDeclaration"/>
                                     </value>
                                 </properties>
                             </activityConfig>
