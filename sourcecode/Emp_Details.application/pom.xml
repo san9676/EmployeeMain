@@ -36,7 +36,7 @@
     <bw.Home>\bw\6.8</bw.Home>
     <httpPort>9460</httpPort>
     <profile>default.substvar</profile>
-    <restartAppNode>true</restartAppNode>
+    <restartAppNode>false</restartAppNode>
     <appNode>EmpDetails-AppNode</appNode>
     <failIfNoTests>false</failIfNoTests>
     <truststorePath></truststorePath>
