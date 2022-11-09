@@ -2,8 +2,15 @@
 <schema targetNamespace="http://www.EniqueSol.org/Emp_InsurenceDetails/V1" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.EniqueSol.org/Emp_InsurenceDetails/V1">
 
     <element name="Emp_InsurenceReq" type="tns:Emp_InsurenceReqType"></element>
-    
     <complexType name="Emp_InsurenceReqType">
+    	<sequence><element name="CorelationID" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TransacTime" type="dateTime" maxOccurs="1" minOccurs="0"></element>
+    		<element name="EmpInsurence" type="tns:Emp_InsurenceType"></element>
+    	</sequence>
+    </complexType>
+    <complexType name="Emp_InsurenceType">
     	<sequence>
     		<element name="EmpCode" type="string">
     		</element>
@@ -24,4 +31,6 @@
     		<element name="ResMsg" type="string" maxOccurs="1" minOccurs="0"></element>
     	</sequence>
     </complexType>
+
+    <element name="Emp_Insurence" type="tns:Emp_InsurenceType"></element>
 </schema>

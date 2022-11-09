@@ -193,17 +193,6 @@
     }
   },
   "definitions" : {
-    "Emp_OrgDetailsRes" : {
-      "type" : "object",
-      "properties" : {
-        "ResCode" : {
-          "type" : "string"
-        },
-        "ResMsg" : {
-          "type" : "string"
-        }
-      }
-    },
     "Emp_SalTitleRes" : {
       "type" : "object",
       "properties" : {
@@ -215,7 +204,62 @@
         }
       }
     },
-    "Emp_OrgDetailsReq" : {
+    "Emp_SalTitleReq" : {
+      "type" : "object",
+      "required" : [ "Emp_SalTitle" ],
+      "properties" : {
+        "CorelationID" : {
+          "type" : "string"
+        },
+        "TransacTime" : {
+          "type" : "string"
+        },
+        "Emp_SalTitle" : {
+          "$ref" : "#/definitions/Emp_SalTitleType"
+        }
+      }
+    },
+    "Employee_ProfType" : {
+      "type" : "object",
+      "required" : [ "EmpCode" ],
+      "properties" : {
+        "EmpCode" : {
+          "type" : "string"
+        },
+        "Department" : {
+          "type" : "string"
+        },
+        "Reporting-To" : {
+          "type" : "string"
+        },
+        "Seating-Location" : {
+          "type" : "string"
+        },
+        "Location" : {
+          "type" : "string"
+        },
+        "Title" : {
+          "type" : "string"
+        },
+        "Date-of-joining" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "Employee-status" : {
+          "type" : "string"
+        },
+        "Employee-type" : {
+          "type" : "string"
+        },
+        "Role" : {
+          "type" : "string"
+        },
+        "Experience" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Emp_OrgDetailsType" : {
       "type" : "object",
       "required" : [ "OrganizationName", "CompanyHQ", "CompanyPhNo", "EmpCode", "EmpName" ],
       "properties" : {
@@ -232,7 +276,8 @@
           "type" : "string"
         },
         "CompanyPhNo" : {
-          "type" : "string"
+          "type" : "integer",
+          "format" : "int64"
         },
         "OrgAddress" : {
           "type" : "string"
@@ -242,9 +287,9 @@
         }
       }
     },
-    "Emp_SalTitleReq" : {
+    "EmpPersonalType" : {
       "type" : "object",
-      "required" : [ "Title", "CurrentSal", "EmpCode", "EmpName" ],
+      "required" : [ "EmailID", "EmpCode", "EmpName" ],
       "properties" : {
         "EmpCode" : {
           "type" : "string"
@@ -252,20 +297,37 @@
         "EmpName" : {
           "type" : "string"
         },
-        "Title" : {
+        "EmailID" : {
           "type" : "string"
         },
-        "CurrentSal" : {
+        "Alt_EmailID" : {
+          "type" : "string"
+        },
+        "PhoneNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "DOB" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "MaritalStatus" : {
+          "type" : "string"
+        },
+        "Age" : {
           "type" : "integer",
           "format" : "int32"
         },
-        "lastModifiedDate" : {
-          "type" : "string",
-          "format" : "date-time"
+        "AadhaarNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "PAN_Number" : {
+          "type" : "string"
         }
       }
     },
-    "EmpPersonalRes" : {
+    "Emp_InsurenceRes" : {
       "type" : "object",
       "properties" : {
         "ResCode" : {
@@ -276,7 +338,19 @@
         }
       }
     },
-    "Emp_InsurenceReq" : {
+    "Employee_ProfRes" : {
+      "type" : "object",
+      "required" : [ "ResCode", "ResMsg" ],
+      "properties" : {
+        "ResCode" : {
+          "type" : "string"
+        },
+        "ResMsg" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Emp_InsurenceType" : {
       "type" : "object",
       "required" : [ "PolicyType", "SumInsured", "PolicyNumber", "ValidTill", "OrgName", "EmpCode", "EmpName" ],
       "properties" : {
@@ -305,7 +379,46 @@
         }
       }
     },
-    "Emp_InsurenceRes" : {
+    "Emp_SalTitleType" : {
+      "type" : "object",
+      "required" : [ "Title", "CurrentSal", "EmpCode", "EmpName" ],
+      "properties" : {
+        "EmpCode" : {
+          "type" : "string"
+        },
+        "EmpName" : {
+          "type" : "string"
+        },
+        "Title" : {
+          "type" : "string"
+        },
+        "CurrentSal" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "lastModifiedDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        }
+      }
+    },
+    "Employee_ProfReq" : {
+      "type" : "object",
+      "required" : [ "Employee_Prof" ],
+      "properties" : {
+        "CorelationID" : {
+          "type" : "string"
+        },
+        "TransacTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "Employee_Prof" : {
+          "$ref" : "#/definitions/Employee_ProfType"
+        }
+      }
+    },
+    "Emp_OrgDetailsRes" : {
       "type" : "object",
       "properties" : {
         "ResCode" : {
@@ -316,7 +429,7 @@
         }
       }
     },
-    "Employee_AddressReq" : {
+    "Employee_AddressType" : {
       "type" : "object",
       "required" : [ "AddressLine1", "State", "ZipCode", "City", "EmpCode" ],
       "properties" : {
@@ -343,48 +456,23 @@
         }
       }
     },
-    "EmpPersonalReq" : {
+    "Emp_OrgDetailsReq" : {
       "type" : "object",
-      "required" : [ "EmailID", "EmpCode", "EmpName" ],
+      "required" : [ "EmpOrganization" ],
       "properties" : {
-        "EmpCode" : {
+        "CorelationID" : {
           "type" : "string"
         },
-        "EmpName" : {
+        "TransacTime" : {
           "type" : "string"
         },
-        "EmailID" : {
-          "type" : "string"
-        },
-        "Alt_EmailID" : {
-          "type" : "string"
-        },
-        "PhoneNo" : {
-          "type" : "string"
-        },
-        "DOB" : {
-          "type" : "string",
-          "format" : "date"
-        },
-        "MaritalStatus" : {
-          "type" : "string"
-        },
-        "Age" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
-        "AadhaarNo" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "PAN_Number" : {
-          "type" : "string"
+        "EmpOrganization" : {
+          "$ref" : "#/definitions/Emp_OrgDetailsType"
         }
       }
     },
-    "Employee_ProfRes" : {
+    "EmpPersonalRes" : {
       "type" : "object",
-      "required" : [ "ResCode", "ResMsg" ],
       "properties" : {
         "ResCode" : {
           "type" : "string"
@@ -394,42 +482,51 @@
         }
       }
     },
-    "Employee_ProfReq" : {
+    "Emp_InsurenceReq" : {
       "type" : "object",
-      "required" : [ "EmpCode" ],
+      "required" : [ "EmpInsurence" ],
       "properties" : {
-        "EmpCode" : {
+        "CorelationID" : {
           "type" : "string"
         },
-        "Department" : {
+        "TransacTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "EmpInsurence" : {
+          "$ref" : "#/definitions/Emp_InsurenceType"
+        }
+      }
+    },
+    "Employee_AddressReq" : {
+      "type" : "object",
+      "required" : [ "EmpAddress" ],
+      "properties" : {
+        "CorelationID" : {
           "type" : "string"
         },
-        "Reporting-To" : {
+        "TransacTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "EmpAddress" : {
+          "$ref" : "#/definitions/Employee_AddressType"
+        }
+      }
+    },
+    "EmpPersonalReq" : {
+      "type" : "object",
+      "required" : [ "empPersonal" ],
+      "properties" : {
+        "CorelationID" : {
           "type" : "string"
         },
-        "Seating-Location" : {
-          "type" : "string"
+        "TransacTime" : {
+          "type" : "string",
+          "format" : "date-time"
         },
-        "Location" : {
-          "type" : "string"
-        },
-        "Title" : {
-          "type" : "string"
-        },
-        "Date-of-joining" : {
-          "type" : "string"
-        },
-        "Employee-status" : {
-          "type" : "string"
-        },
-        "Employee-type" : {
-          "type" : "string"
-        },
-        "Role" : {
-          "type" : "string"
-        },
-        "Experience" : {
-          "type" : "string"
+        "empPersonal" : {
+          "$ref" : "#/definitions/EmpPersonalType"
         }
       }
     },
