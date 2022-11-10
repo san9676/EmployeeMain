@@ -1088,8 +1088,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint
-                                    x="131"
-                                    xsi:type="notation:Bounds" y="80"/>
+                                    x="148"
+                                    xsi:type="notation:Bounds" y="45"/>
                                     </children>
 
                                     <styles xsi:type="notation:DrawerStyle"/>
