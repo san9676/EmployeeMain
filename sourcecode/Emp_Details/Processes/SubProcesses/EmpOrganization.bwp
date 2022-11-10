@@ -959,6 +959,9 @@
             name="SendHTTPRequest" sca-bpel:internal="true"/>
         <bpws:variable element="ns6:ActivityErrorData"
             name="_error_SendHTTPRequest" sca-bpel:internal="true"/>
+        <bpws:variable name="OrgResourcePath" sca-bpel:hotUpdate="false"
+            sca-bpel:privateProperty="true" sca-bpel:property="yes"
+            tibex:propertySource="/resourcePaths/OrganizationPath" type="xsd:string"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1122,7 +1125,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://tns.tibco.com/bw/activity/sendhttprequest/input+05daad6b-517b-4914-bb15-c53680e110fd+RequestActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;RenderJSON&quot;/>&lt;xsl:template name=&quot;SendHTTPRequest-input&quot; match=&quot;/&quot;>&lt;tns3:RequestActivityInput>&lt;Method>&lt;xsl:value-of select=&quot;'post'&quot;/>&lt;/Method>&lt;RequestURI>&lt;xsl:value-of select=&quot;'/addOrgDetails'&quot;/>&lt;/RequestURI>&lt;PostData>&lt;xsl:value-of select=&quot;$RenderJSON/jsonString&quot;/>&lt;/PostData>&lt;/tns3:RequestActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://tns.tibco.com/bw/activity/sendhttprequest/input+05daad6b-517b-4914-bb15-c53680e110fd+RequestActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;RenderJSON&quot;/>&lt;xsl:param name=&quot;OrgResourcePath&quot;/>&lt;xsl:template name=&quot;SendHTTPRequest-input&quot; match=&quot;/&quot;>&lt;tns3:RequestActivityInput>&lt;Method>&lt;xsl:value-of select=&quot;'post'&quot;/>&lt;/Method>&lt;RequestURI>&lt;xsl:value-of select=&quot;$OrgResourcePath&quot;/>&lt;/RequestURI>&lt;PostData>&lt;xsl:value-of select=&quot;$RenderJSON/jsonString&quot;/>&lt;/PostData>&lt;/tns3:RequestActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

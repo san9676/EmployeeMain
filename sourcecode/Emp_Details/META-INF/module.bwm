@@ -25,6 +25,9 @@
   <sca:property xmi:id="_mMTEEFj0Ee28ef0bHrU9Ng" name="/SalHttpClient/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_9Aba0FkCEe2L0tcRQSMsSQ" name="/OrgHttpClient/Host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="__PsHsFkCEe2L0tcRQSMsSQ" name="/OrgHttpClient/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_FuDwgGDeEe2rs8GLg4L-mQ" name="/resourcePaths/personalPath" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_M36IEGDeEe2rs8GLg4L-mQ" name="/resourcePaths/OrganizationPath" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_UKu1cGDeEe2rs8GLg4L-mQ" name="/resourcePaths/InsurencePath" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_ofUYsF5cEe2PFegRppAYBA" name="Componenttest" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ofUYsV5cEe2PFegRppAYBA" processName="SubProcesses.test" autoStart="false"/>
   </sca:component>
